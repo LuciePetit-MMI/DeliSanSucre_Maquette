@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/main.css">
+    <!--fontawsome-->
+    <script src="https://kit.fontawesome.com/7909d40077.js" crossorigin="anonymous"></script>
+    <!--connection google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--font overpass-->
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <!--font fira sans-->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700;900&display=swap" rel="stylesheet">
+    <title>Des recettes sans sucre, sans lactose, sans gluten, sans sel, végétariennes et vegan</title>
+</head>
+<body class="overflow-x-hidden">
+    <header id="navigation" class="hidden">
+        <a href="../index.html"><img src="image/image.png" alt="logo délisansucre"></a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="recepes.html">Recettes</a>
+                    <ul>
+                        <div>
+                            <p>Des recettes adaptées pour tous les goûts</p>
+                            <a href="recepes.html">Voir toutes les recettes</a>
+                            <a href="add_recepe.html">Proposer une recette</a>
+                        </div>
+                        <div>
+                            <a href="categories.html">Catégories</a>
+                            <a href="category.html">Sans sucre</a>
+                            <a href="category.html">Sans lactose</a>
+                            <a href="category.html">Sans gluten</a>
+                            <a href="category.html">Sans sel</a>
+                            <a href="category.html">Végétarien</a>
+                            <a href="category.html">Vegan</a>
+                        </div>
+                        <div>
+                            <a href="categories.html">Repas</a>
+                            <a href="category.html">Petit-déjeuner</a>
+                            <a href="category.html">Déjeuner</a>
+                            <a href="category.html">Collation</a>
+                            <a href="category.html">Apéro</a>
+                            <a href="category.html">Diner</a>
+                        </div>
+                        <div>
+                            <a href="categories.html">Plats</a>
+                            <a href="category.html">Petit-déjeuner</a>
+                            <a href="category.html">Apéro</a>
+                            <a href="category.html">Entrée</a>
+                            <a href="category.html">Plat</a>
+                            <a href="category.html">Dessert</a>
+                        </div>
+                    </ul>
+                </li>
+                <li>
+                    <a href="menu.html">Menu de la semaine</a>
+                </li>
+                <li>
+                    <a href="articles.html">Articles</a>
+                </li>
+                <li>
+                    <a href="account.html">Profil</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="w-10/12 mx-auto">
+        <section id="showcase" class="mt-8">
+            <h1>Titre de la recette</h1>
+            <p class="font-fira font-bold text-black text-center">Par <span class="text-dark">NOM PRENOM</span></p>
+            <div>
+                <div class="w-full h-60 laptop:h-80 overflow-hidden flex justify-center align-center">
+                    <img src="image/image.png" alt="image recette" class="w-full h-fit">
+                </div>
+                <p class="px-8 py-4 bg-light font-overpass font-regular">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eius, asperiores ea libero quidem nemo est voluptate odit inventore quae!</p>
+            </div>
+        </section>
+        <section id="infos" class="mt-4 mb-8">
+            <div class="grid grid-cols-4 mb-4 mx-auto">
+                <span class="flex flex-col items-center">
+                    <h4>Nombre de personne</h4>
+                    <p class="text-center text-xl text-black font-bold w-14 h-14 bg-light rounded-full mx-4 shadow-lg flex justify-center items-center">0</p>
+                </span>
+                <span class="flex flex-col items-center">
+                    <h4>Temps de préparation</h4>
+                    <p class="text-center text-xl text-black font-bold w-14 h-14 bg-light rounded-full mx-4 shadow-lg flex justify-center items-center">0</p>
+                </span>
+                <span class="flex flex-col items-center">
+                    <h4>Temps de cuisson</h4>
+                    <p class="text-center text-xl text-black font-bold w-14 h-14 bg-light rounded-full mx-4 shadow-lg flex justify-center items-center">0</p>
+                </span>
+                <span class="flex flex-col items-center">
+                    <h4>Temps de repos</h4>
+                    <p class="text-center text-xl text-black font-bold w-14 h-14 bg-light rounded-full mx-4 shadow-lg flex justify-center items-center">0</p>
+                </span>
+            </div>
+            <div class="laptop:grid laptop:grid-cols-2">
+                <div>
+                    <h2 class="border-dark border-b-2 w-32">Ingédients</h2>
+                    <ul class="grid grid-cols-2 gap-2 w-9/12 font-overpass font-regular">
+                        <li>Ingrédient</li>
+                        <li>Ingrédient</li>
+                        <li>Ingrédient</li>
+                        <li>Ingrédient</li>
+                        <li>Ingrédient</li>
+                        <li>Ingrédient</li>
+                    </ul>
+                    <p class="font-overpass font-thin flex justify-center items-center mx-auto my-4"><i class="fas fa-plus-circle px-2 text-primary"></i>Créer ma liste de course</p>
+                </div>
+                <div class="laptop:border-l-2 laptop:border-secondary laptop:pl-4">
+                    <ul class="font-overpass font-regular w-full flex justify-center border-secondary border-t-2 pt-2 laptop:border-none laptop:justify-start">
+                        <li class="px-3"><img src="image/logo_noir.svg" alt="" class="w-10"></li>
+                        <li class="px-3"><img src="image/logo_noir.svg" alt="" class="w-10"></li>
+                        <li class="px-3"><img src="image/logo_noir.svg" alt="" class="w-10"></li>
+                    </ul>
+                    <div class="flex justify-evenly my-4">
+                        <p class="font-fira font-black border-2 border-secondary py-2 px-4 rounded-full w-min">Collation</p>
+                        <p class="font-fira font-black border-2 border-secondary py-2 px-4 rounded-full w-min">Apéros</p>
+                    </div>
+                    <div class="font-overpass font-regular">
+                        <p>Insuline nécessaire : taux</p>    
+                        <p>Glucide : taux</p>
+                        <p>Lactose : taux</p>
+                        <p>Gluten : taux</p>
+                        <p>Protéine : taux</p>
+                    </div>
+                </div>    
+            </div>
+        </section>
+        <section id="steps" class="my-8">
+            <h2 class="border-dark border-b-2 w-32">Étapes</h2>
+            <div class="tablet:w-9/12 m-auto">
+                <div class="flex flex-col my-4 tablet:flex-row tablet:items-center">
+                    <p class="bg-light rounded-full w-auto h-auto px-8 py-6 flex items-center justify-center font-fira font-black text-2xl text-dark self-center mb-2 tablet:mr-8">1</p>
+                    <p class="font-overpass font-regular">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente unde exercitationem eveniet consequatur vel debitis possimus! Laborum, recusandae amet dolorem deleniti magnam, delectus ea obcaecati blanditiis iste quidem vel omnis?</p>
+                </div>
+                <div class="flex flex-col my-4 tablet:flex-row tablet:items-center">
+                    <p class="bg-light rounded-full w-auto h-auto px-8 py-6 flex items-center justify-center font-fira font-black text-2xl text-dark self-center mb-2 tablet:mr-8">2</p>
+                    <p class="font-overpass font-regular">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente unde exercitationem eveniet consequatur vel debitis possimus! Laborum, recusandae amet dolorem deleniti magnam, delectus ea obcaecati blanditiis iste quidem vel omnis?</p>
+                </div>
+                <div class="flex flex-col my-4 tablet:flex-row tablet:items-center">
+                    <p class="bg-light rounded-full w-auto h-auto px-8 py-6 flex items-center justify-center font-fira font-black text-2xl text-dark self-center mb-2 tablet:mr-8">3</p>
+                    <p class="font-overpass font-regular">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente unde exercitationem eveniet consequatur vel debitis possimus! Laborum, recusandae amet dolorem deleniti magnam, delectus ea obcaecati blanditiis iste quidem vel omnis?</p>
+                </div>
+                <div class="flex flex-col my-4 tablet:flex-row tablet:items-center">
+                    <p class="bg-light rounded-full w-auto h-auto px-8 py-6 flex items-center justify-center font-fira font-black text-2xl text-dark self-center mb-2 tablet:mr-8">4</p>
+                    <p class="font-overpass font-regular">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente unde exercitationem eveniet consequatur vel debitis possimus! Laborum, recusandae amet dolorem deleniti magnam, delectus ea obcaecati blanditiis iste quidem vel omnis?</p>
+                </div>    
+            </div>
+        </section>
+        <section id="opinions" class="my-8">
+            <h2 class="border-dark border-b-2 w-32">Vos avis</h2>
+            <div class="tablet:w-9/12 m-auto">
+                <div class="flex items-start my-4">
+                    <div class="flex flex-col justify-center mr-4">            
+                        <img src="image/image.png" alt="Image profil" class="rounded-full w-20">
+                        <p>Pseudo</p>
+                    </div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia maxime animi ad non voluptatem excepturi dolorem, eligendi recusandae explicabo cum.</p>
+                </div>
+                <div class="flex items-start my-4">
+                    <div class="flex flex-col justify-center mr-4">            
+                        <img src="image/image.png" alt="Image profil" class="rounded-full w-20">
+                        <p>Pseudo</p>
+                    </div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia maxime animi ad non voluptatem excepturi dolorem, eligendi recusandae explicabo cum.</p>
+                </div>
+                <p class="font-overpass font-regular flex justify-center items-center mx-auto my-4"><i class="fa fa-chevron-circle-down fa-2x px-2 text-primary"></i>Voir plus d'avis</p>    
+            </div>
+        </section>    
+    </main>
+</body>
+</html> 

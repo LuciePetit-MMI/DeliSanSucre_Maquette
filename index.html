@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/main.css">
+    <!--fontawsome-->
+    <script src="https://kit.fontawesome.com/7909d40077.js" crossorigin="anonymous"></script>
+    <!--connection flickity-->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <!--connection google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--font overpass-->
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <!--font fira sans-->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700;900&display=swap" rel="stylesheet">
+    <!--swiper js-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>    
+    <title>Des recettes sans sucre, sans lactose, sans gluten, sans sel, végétariennes et vegan</title>
+</head>
+<body>
+    <header id="menu" class="relative z-50">
+        <div class="laptop:flex flex-col laptop:flex-row laptop:justify-center w-screen left-0 top-0 fixed laptop:bg-primary">
+            <div @click.away="open = false" class="flex flex-col w-full laptop:w-10/12 laptop:h-20 laptop:flex-row laptop:justify-between laptop:items-center text-gray-700 bg-white" x-data="{ open: false }"  :class="{'h-screen': open, 'h-auto': !open}">
+              
+              <div class="flex-shrink-0 px-8 py-2 flex flex-row items-center justify-between bg-primary laptop:h-full">
+                <a href="index.html" class="tracking-widest"><img src="./src/image/logo_noir.svg" alt="logo" class="w-16 fill"></a>
+                <button class="rounded-laptop laptop:hidden rounded-laptop focus:outline-none focus:shadow-outline" @click="open = !open">
+                  <svg viewBox="0 0 20 20" class="w-6 h-6 fill-dark">
+                    <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </button>
+              </div>
+    
+              <nav :class="{'block': open, 'hidden': !open}" class="flex flex-col flex-grow bg-primary laptop:flex laptop:flex-row laptop:h-full laptop:justify-evenly laptop:items-center laptop:w-full">
+                
+                <div @click.away="open_recettes = false" x-data="{ open_recettes: false }"  :class="{'h-auto': !open_recettes, 'h-full': open_recettes}">
+                  <button @click="open_recettes = !open_recettes" class="py-7 border-t-2 border-white uppercase pl-8 flex flex-row w-full bg-transparent laptop:w-auto laptop:inline laptop:pl-0 laptop:border-none">
+                    <span>Recettes</span>
+                    <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open_recettes, 'rotate-0': !open_recettes}" class="fill-black inline w-6 h-6 transition-transform duration-200 transform "><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                  </button>
+                  <div x-show="open_recettes" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute w-full origin-top-right laptop:w-48 laptop:left-0">
+                    <div class="bg-primary laptop:w-screen laptop:py-8 laptop:h-80 laptop:bg-white">
+                        <ul class="flex flex-col items-start laptop:flex-row laptop:justify-center laptop:items-center laptop:w-full laptop:h-full">
+                            <div class="px-8 flex flex-col laptop:items-start laptop:w-1/3 laptop:px-4">
+                                <p class="mb-6 text-white text-xl laptop:text-dark">Des recettes adaptées pour tous les goûts</p>
+                                <a href="src/recepes.html" class="uppercase text-black">Voir toutes les recettes <i class="fas fa-arrow-right pl-2"></i></a>
+                                <span class="my-6 flex">
+                                    <a href="src/add_recepe.html" class="btn-primary">Proposez votre recette !</a>
+                                </span>
+                            </div>
+    
+    
+                            <div @click.away="open_categories = false" class="relative laptop:px-4 laptop:flex laptop:justify-center laptop:items-start laptop:border-secondary laptop:border-l-2 laptop:border-r-2 laptop:w-1/5 laptop:h-full" x-data="{ open_categories: false }"  :class="{'h-auto': !open_categories, 'h-60': open_categories}">
+                                <button @click="open_categories = !open_categories" class="text-white py-2 uppercase pl-8 flex flex-row w-full bg-transparent laptop:w-auto laptop:inline laptop:m-0 laptop:px-0">
+                                    <span class="text-white laptop:text-black text-lg">Catégories</span>
+                                    <svg fill="white" viewBox="0 0 20 20" :class="{'rotate-180': open_categories, 'rotate-0': !open_categories}" class="inline w-6 h-6 transition-transform duration-200 transform laptop:hidden"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                                </button>    
+                                <div x-show="open_categories" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute w-full top-8 origin-top-right laptop:w-48 laptop:important-block">
+                                    <ul class="w-screen laptop:w-auto laptop:text-center">
+                                        <li class="pl-8 py-1 laptop:px-0"><a href="src/category.html">Sans sucre</a></li>
+                                        <li class="pl-8 py-1 laptop:px-0"><a href="src/category.html">Sans lactose</a></li>
+                                        <li class="pl-8 py-1 laptop:px-0"><a href="src/category.html">Sans gluten</a></li>
+                                        <li class="pl-8 py-1 laptop:px-0"><a href="src/category.html">Sans sel</a></li>
+                                        <li class="pl-8 py-1 laptop:px-0"><a href="src/category.html">Végétarien</a></li>
+                                        <li class="pl-8 py-1 laptop:px-0"><a href="src/category.html">Vegan</a></li>
+                                    </ul>
+                                </div>
+                            </div> 
+    
+                            <div @click.away="open_meals = false" class="relative laptop:px-4 laptop:flex laptop:justify-center laptop:items-start laptop:w-1/5 laptop:h-full" x-data="{ open_meals: false }"  :class="{'h-auto': !open_meals, 'h-56': open_meals}">
+                                <button @click="open_meals = !open_meals" class="text-white py-2 uppercase pl-8 flex flex-row w-full bg-transparent laptop:w-auto laptop:inline laptop:m-0 laptop:px-0">
+                                    <span class="text-white laptop:text-black text-lg">Repas</span>
+                                    <svg fill="white" viewBox="0 0 20 20" :class="{'rotate-180': open_meals, 'rotate-0': !open_meals}" class="inline w-6 h-6 transition-transform duration-200 transform laptop:hidden"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                                </button>    
+                                <div x-show="open_meals" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute w-full top-8 origin-top-right laptop:w-48 laptop:important-block">
+                                    <ul class="w-screen laptop:w-auto laptop:text-center">
+                                        <li class="pl-8 py-1 laptop:px-0"><a href="src/category.html">Petit-déjeuner</a></li>
+                                        <li class="pl-8 py-1 laptop:px-0"><a href="src/category.html">Déjeuner</a></li>
+                                        <li class="pl-8 py-1 laptop:px-0"><a href="src/category.html">Collation</a></li>
+                                        <li class="pl-8 py-1 laptop:px-0"><a href="src/category.html">Apéro</a></li>
+                                        <li class="pl-8 py-1 laptop:px-0"><a href="src/category.html">Diner</a></li>
+                                    </ul>
+                                </div>
+                            </div> 
+    
+                            <div @click.away="open_plates = false" class="relative laptop:px-4 laptop:flex laptop:justify-center laptop:items-start laptop:border-secondary laptop:border-l-2 laptop:border-r-2 laptop:w-1/5 laptop:h-full" x-data="{ open_plates: false }"  :class="{'h-auto': !open_plates, 'h-56': open_plates}">
+                                <button @click="open_plates = !open_plates" class="text-white py-2 uppercase pl-8 flex flex-row w-full bg-transparent laptop:w-auto laptop:inline laptop:m-0 laptop:px-0">
+                                    <span class="text-white laptop:text-black text-lg">Plats</span>
+                                    <svg fill="white" viewBox="0 0 20 20" :class="{'rotate-180': open_plates, 'rotate-0': !open_plates}" class="inline w-6 h-6 transition-transform duration-200 transform laptop:hidden"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                                </button>    
+                                <div x-show="open_plates" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute w-full top-8 origin-top-right laptop:w-48 laptop:important-block">
+                                    <ul class="w-screen laptop:w-auto laptop:text-center">
+                                        <li class="pl-8 py-1 laptop:px-0"><a href="src/category.html">Petit-déjeuner</a></li>
+                                        <li class="pl-8 py-1 laptop:px-0"><a href="src/category.html">Apéro</a></li>
+                                        <li class="pl-8 py-1 laptop:px-0"><a href="src/category.html">Entrée</a></li>
+                                        <li class="pl-8 py-1 laptop:px-0"><a href="src/category.html">Plat</a></li>
+                                        <li class="pl-8 py-1 laptop:px-0"><a href="src/category.html">Dessert</a></li>
+                                    </ul>
+                                </div>
+                            </div> 
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+    
+                <a href="src/menu.html" class="border-t-2 border-white py-9 uppercase pl-8 laptop:px-4 laptop:border-none laptop:py-0">Menu de la semaine</a>
+                <a href="src/articles.html" class="border-t-2 border-white py-9 uppercase pl-8 laptop:px-4 laptop:border-none laptop:py-0">Articles</a>
+                <a href="src/account.html" class="border-t-2 border-b-2 border-white py-9 uppercase pl-8 laptop:px-4 laptop:border-none laptop:py-0">Profil</a>
+              </nav>
+              <div :class="{'hidden': open, 'flex': !open}" class="mx-auto mt-4 w-9/12 laptop:bg-primary laptop:h-full laptop:w-5/12 laptop:flex laptop:m-0 laptop:py-4">
+                <input class="w-full border-primary border-2 rounded-full px-2 py-2 text-dark mx-auto" placeholder="Rechercher"></input>
+              </div>        
+            </div>
+        </div>    
+    </header>
+    <main class="w-10/12 mx-auto mt-40 mb-10 laptop:mt-28 desktop:w-8/12">
+        <section id="showcase" class="my-8">
+            <div class="showcaseSlider relative h-60 overflow-x-hidden tablet:h-96">
+                <div class="swiper-wrapper">
+                    <div v-for="image in imagesSlider" :key="image.id" class="swiper-slide h-60 overflow-hidden w-screen tablet:h-96 text-center">
+                        <img src="src/image/image.png" alt="" class="w-full">
+                    </div>
+                    <div v-for="image in imagesSlider" :key="image.id" class="swiper-slide h-60 overflow-hidden w-screen tablet:h-96">
+                        <img src="src/image/image.png" alt="" class="w-full">
+                    </div>
+                    <div v-for="image in imagesSlider" :key="image.id" class="swiper-slide h-60 overflow-hidden w-screen tablet:h-96">
+                        <img src="src/image/image.png" alt="" class="w-full">
+                    </div>
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+
+            <h1>DéliSanSucre, des recettes adaptées pour tous les goûts</h1>
+        </section>
+        <section id="last_recepe" class="my-8 border-t-4 border-secondary pt-4">
+            <h2 class="text-center">Dernières Recettes</h2>
+            <span class="flex justify-center mb-4">
+                <a href="src/recepes.html" class="text-center uppercase font-overpass text-dark">Voir toutes les recettes</a>
+                <i class="fas fa-arrow-right pl-2"></i>
+            </span>
+            
+            <div class="mySwiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                    <div class="swiper-slide relative px-1 h-96 w-9/12 mobil:w-60 mobil:px-2">
+                        <a href="src/recepe.html">
+                            <img src="src/image/image.png" alt="" class="h-full w-full">
+                            <div class="flex flex-col bg-white text-dark p-2 font-fira font-black w-4/5 h-24 absolute bottom-6 items-center justify-center mobil:w-50">
+                                <h3 class="">Titre de la recette</h3>    
+                                <div class="flex justify-evenly">
+                                    <img src="src/image/logo_noir.svg" alt="" class="w-8 h-8">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide relative px-1 h-96 w-9/12 mobil:w-60 mobil:px-2">
+                        <a href="src/recepe.html">
+                            <img src="src/image/image.png" alt="" class="h-full w-full">
+                            <div class="flex flex-col bg-white text-dark p-2 font-fira font-black w-4/5 h-24 absolute bottom-6 items-center justify-center mobil:w-50">
+                                <h3 class="">Titre de la recette</h3>    
+                                <div class="flex justify-evenly">
+                                    <img src="src/image/logo_noir.svg" alt="" class="w-8 h-8">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide relative px-1 h-96 w-9/12 mobil:w-60 mobil:px-2">
+                        <a href="src/recepe.html">
+                            <img src="src/image/image.png" alt="" class="h-full w-full">
+                            <div class="flex flex-col bg-white text-dark p-2 font-fira font-black w-4/5 h-24 absolute bottom-6 items-center justify-center mobil:w-50">
+                                <h3 class="">Titre de la recette</h3>    
+                                <div class="flex justify-evenly">
+                                    <img src="src/image/logo_noir.svg" alt="" class="w-8 h-8">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide relative px-1 h-96 w-9/12 mobil:w-60 mobil:px-2">
+                        <a href="src/recepe.html">
+                            <img src="src/image/image.png" alt="" class="h-full w-full">
+                            <div class="flex flex-col bg-white text-dark p-2 font-fira font-black w-4/5 h-24 absolute bottom-6 items-center justify-center mobil:w-50">
+                                <h3 class="">Titre de la recette</h3>    
+                                <div class="flex justify-evenly">
+                                    <img src="src/image/logo_noir.svg" alt="" class="w-8 h-8">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide relative px-1 h-96 w-9/12 mobil:w-60 mobil:px-2">
+                        <a href="src/recepe.html">
+                            <img src="src/image/image.png" alt="" class="h-full w-full">
+                            <div class="flex flex-col bg-white text-dark p-2 font-fira font-black w-4/5 h-24 absolute bottom-6 items-center justify-center mobil:w-50">
+                                <h3 class="">Titre de la recette</h3>    
+                                <div class="flex justify-evenly">
+                                    <img src="src/image/logo_noir.svg" alt="" class="w-8 h-8">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide relative px-1 h-96 w-9/12 mobil:w-60 mobil:px-2">
+                        <a href="src/recepe.html">
+                            <img src="src/image/image.png" alt="" class="h-full w-full">
+                            <div class="flex flex-col bg-white text-dark p-2 font-fira font-black w-4/5 h-24 absolute bottom-6 items-center justify-center mobil:w-50">
+                                <h3 class="">Titre de la recette</h3>    
+                                <div class="flex justify-evenly">
+                                    <img src="src/image/logo_noir.svg" alt="" class="w-8 h-8">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide relative px-1 h-96 w-9/12 mobil:w-60 mobil:px-2">
+                        <a href="src/recepe.html">
+                            <img src="src/image/image.png" alt="" class="h-full w-full">
+                            <div class="flex flex-col bg-white text-dark p-2 font-fira font-black w-4/5 h-24 absolute bottom-6 items-center justify-center mobil:w-50">
+                                <h3 class="">Titre de la recette</h3>    
+                                <div class="flex justify-evenly">
+                                    <img src="src/image/logo_noir.svg" alt="" class="w-8 h-8">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide relative px-1 h-96 w-9/12 mobil:w-60 mobil:px-2">
+                        <a href="src/recepe.html">
+                            <img src="src/image/image.png" alt="" class="h-full w-full">
+                            <div class="flex flex-col bg-white text-dark p-2 font-fira font-black w-4/5 h-24 absolute bottom-6 items-center justify-center mobil:w-50">
+                                <h3 class="">Titre de la recette</h3>    
+                                <div class="flex justify-evenly">
+                                    <img src="src/image/logo_noir.svg" alt="" class="w-8 h-8">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide relative px-1 h-96 w-9/12 mobil:w-60 mobil:px-2">
+                        <a href="src/recepe.html">
+                            <img src="src/image/image.png" alt="" class="h-full w-full">
+                            <div class="flex flex-col bg-white text-dark p-2 font-fira font-black w-4/5 h-24 absolute bottom-6 items-center justify-center mobil:w-50">
+                                <h3 class="">Titre de la recette</h3>    
+                                <div class="flex justify-evenly">
+                                    <img src="src/image/logo_noir.svg" alt="" class="w-8 h-8">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide relative px-1 h-96 w-9/12 mobil:w-60 mobil:px-2">
+                        <a href="src/recepe.html">
+                            <img src="src/image/image.png" alt="" class="h-full w-full">
+                            <div class="flex flex-col bg-white text-dark p-2 font-fira font-black w-4/5 h-24 absolute bottom-6 items-center justify-center mobil:w-50">
+                                <h3 class="">Titre de la recette</h3>    
+                                <div class="flex justify-evenly">
+                                    <img src="src/image/logo_noir.svg" alt="" class="w-8 h-8">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lastrecepe-carousel hidden">
+                <div class="relative px-1 h-96 w-9/12 mobil:w-60 mobil:px-2">
+                    <a href="src/recepe.html">
+                        <img src="src/image/image.png" alt="" class="h-full w-full">
+                        <div class="flex flex-col bg-white text-dark p-2 font-fira font-black w-4/5 h-24 absolute bottom-6 items-center justify-center mobil:w-50">
+                            <h3 class="">Titre de la recette</h3>    
+                            <div class="flex justify-evenly">
+                                <img src="src/image/logo_noir.svg" alt="" class="w-8 h-8">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <span class="my-6 flex justify-center">
+                <a href="src/add_recepe.html" class="btn-primary">Proposez votre recette !</a>
+            </span>
+        </section>
+        <section id="category" class="my-8 border-t-4 border-secondary pt-4">
+            <h2 class="text-center">Catégories</h2>
+            <span class="flex justify-center mb-4">
+                <a href="src/categories.html" class="text-center uppercase font-overpass text-dark">Voir toutes les catégories</a>
+                <i class="fas fa-arrow-right pl-2"></i>
+            </span>
+            <div class="recepeSlider relative overflow-hidden">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide relative px-1 h-96 w-9/12 mobil:w-60 mobil:px-2">
+                        <a >
+                            <div class="flex justify-center overflow-hidden">
+                                <img src="src/image/image.png" alt="" class="h-full max-w-none">
+                            </div>
+                            <div class="flex flex-col bg-white text-dark p-2 font-fira font-black w-4/5 h-24 absolute bottom-6 items-center justify-center mobil:w-50">
+                                <h3 class="my-0">Titre recette</h3>
+                                <div class="flex justify-evenly">
+                                    <img src="src/image/logo_noir.svg" alt="" class="w-8 h-8">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-button-next text-primary"></div>
+                <div class="swiper-button-prev text-primary"></div>
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-4  mx-auto laptop:w-10/12 laptop:grid-cols-3">
+                <a href="src/category.html" class="flex flex-col items-center">
+                    <div class="relative">
+                            <span class="m-4 block rounded-full overflow-hidden h-32 w-32 tablet:h-60 tablet:w-60">
+                                <img src="src/image/image.png" alt="categorie.nom" class="h-full max-w-none">
+                            </span>
+                        <img src="src/image/logo_noir.svg" alt="categorie.nom" class="absolute right-0 bottom-0 w-14 h-14 tablet:w-20 tablet:h-20">
+                    </div>
+                    <h3 class="text-center font-fira font-bold uppercase">Titre catégorie</h3>
+                </a>
+                <a href="src/category.html" class="flex flex-col items-center">
+                    <div class="relative">
+                        <img src="src/image/image.png" alt="" class="rounded-full p-4 w-60">
+                        <img src="src/image/logo_noir.svg" alt="" class="absolute right-0 bottom-0 w-14 h-14 tablet:w-20 tablet:h-20">
+                    </div>
+                    <h3 class="text-center font-fira font-bold uppercase">Nom catégorie</h3>    
+                </a>
+                <a href="src/category.html" class="flex flex-col items-center">
+                    <div class="relative">
+                        <img src="src/image/image.png" alt="" class="rounded-full p-4 w-60">
+                        <img src="src/image/logo_noir.svg" alt="" class="absolute right-0 bottom-0 w-14 h-14 tablet:w-20 tablet:h-20">
+                    </div>
+                    <h3 class="text-center font-fira font-bold uppercase">Nom catégorie</h3>    
+                </a>
+                <a href="src/category.html" class="flex flex-col items-center">
+                    <div class="relative">
+                        <img src="src/image/image.png" alt="" class="rounded-full p-4 w-60">
+                        <img src="src/image/logo_noir.svg" alt="" class="absolute right-0 bottom-0 w-14 h-14 tablet:w-20 tablet:h-20">
+                    </div>
+                    <h3 class="text-center font-fira font-bold uppercase">Nom catégorie</h3>    
+                </a>
+                <a href="src/category.html" class="flex flex-col items-center">
+                    <div class="relative">
+                        <img src="src/image/image.png" alt="" class="rounded-full p-4 w-60">
+                        <img src="src/image/logo_noir.svg" alt="" class="absolute right-0 bottom-0 w-14 h-14 tablet:w-20 tablet:h-20">
+                    </div>
+                    <h3 class="text-center font-fira font-bold uppercase">Nom catégorie</h3>    
+                </a>
+                <a href="src/category.html" class="flex flex-col items-center">
+                    <div class="relative">
+                        <img src="src/image/image.png" alt="" class="rounded-full p-4 w-60">
+                        <img src="src/image/logo_noir.svg" alt="" class="absolute right-0 bottom-0 w-14 h-14 tablet:w-20 tablet:h-20">
+                    </div>
+                    <h3 class="text-center font-fira font-bold uppercase">Nom catégorie</h3>    
+                </a>
+            </div>
+        </section>
+        <section id="description" class="my-8 border-t-4 border-secondary pt-4">
+            <h2 class="text-center">DéliSanSucre : votre allié pour une alimentation fun et saine !</h2>
+            <div class="laptop:flex">
+                <div>
+                    <p class="font-overpass font-light p-4">DéliSanSucre vous propose des recettes adaptées à votre régime alimentaire. Vous trouverez des recettes sans sucre, sans gluten, sans lactose, sans sel, végétariennes et véganes. Tout ce qu’il vous faut pour ravir vos papilles et celles de vos invité.</p>
+                    <p class="font-overpass font-light p-4">Suivre un régime particulier ce n’est pas toujours simple. Ce site est à l’initiative de l’association Indiglu, qui souhaite aider les personnes souffrant de diabète. Son but est d’aider ces personnes à diversifier leur alimentation tout en régulant facilement leur glycémie. Nous offrons donc aux personnes diabétiques un site regroupant des recettes avec un taux de sucre faible. Mais surtout, un taux d’insuline clairement indiqué. Ils n’auront qu’à regarder la recette pour savoir ce qu’il faut pour la contrebalancer.</p>        
+                </div>
+                <div>
+                    <p class="font-overpass font-light p-4">Nous souhaitons ouvrir cette facilité à toutes les personnes qui ont un régime alimentaire spécifique. C’est pourquoi vous y retrouverez des recettes sans lactose, sans gluten et sans sel pour les intolérances. Des recettes végétariennes et véganes pour ceux qui ne mangent pas de viande ou de produits animaux. Mais également tout un panel de filtre d'allergènes. Il n’est pas toujours simple de trouver une recette quand on est allergique. Surtout si ça touche des aliments courants. Avec DéliSanSucre, vous n’aurez qu’à cliquer sur un filtre. Toutes les recettes qui ne vous conviennent pas sont automatiquement retirées des résultats. Sans prise de tête, mais pas sans plaisir.</p>
+                    <p class="font-overpass font-light p-4">Si vous pensez qu’il manque des allergènes ou des régimes alimentaires, n’hésitez pas à nous contacter. Et si vous voulez partager vos meilleures recettes avec la communauté, vous pouvez nous les proposer ici. </p>        
+                </div>
+            </div>
+        </section>    
+    </main>
+    <section id="newsletter" class="bg-primary px-8 py-4 flex flex-col items-center desktop:w-10/12 m-auto">
+        <h3 class="font-fira font-black text-black uppercase text-l text-center">Recevez des recettes adaptées directement dans votre boîte mail</h3>
+        <p class="font-overpass font-regular my-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, quis.</p>
+        <form action="/leads-subscribing-newsletter" method="post">
+                <label for="email" class="font-overpass font-thin">Votre adresse e-mail :</label>
+            <div class="flex ">
+                <input id="email" name="subscriber_email" type="email"/>
+                <input type="submit" class="font-fira bg-dark text-white px-8 py-2" value="S'abonner">
+            </div>
+        </form>
+    </section>
+    <footer id="footer" class="relative bg-light px-8 py-4 desktop:w-10/12 m-auto">
+        <div class="mt-5">
+            <img src="src/image/logo_typo_noir.svg" alt="" class="w-60">
+            <p class="w-60 font-overpass text-lg tablet:w-full">des recettes adaptées, un plaisir retrouvé</p>
+        </div>
+        <div class="grid grid-cols-1 gap-2 tablet:grid-cols-2 laptop:grid-cols-4">
+            <div id="menu" class="my-4">
+                <h4 class="font-fira font-black text-dark uppercase text-xl text-center mb-2">Navigation</h4>
+                <ul>
+                    <li>
+                        <a href="src/recepes.html" class="font-overpass font-light">Recettes</a>
+                    </li>
+                    <li>
+                        <a href="src/menu.html" class="font-overpass font-light">Menu de la semaine</a>
+                    </li>
+                    <li>
+                        <a href="src/articles.html" class="font-overpass font-light">Articles</a>
+                    </li>
+                    <li>
+                        <a href="src/contact.html" class="font-overpass font-light">Contact</a>
+                    </li>
+                    <li>
+                        <a href="src/account.html" class="font-overpass font-light">Profil</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="about" class="my-4">
+                <h4 class="font-fira font-black text-dark uppercase text-xl text-center mb-2">À propos</h4>
+                <ul>
+                    <li>
+                        <a href="indiglu.com" target="blank" class="font-overpass font-light">Indiglu</a>
+                    </li>
+                    <li>
+                        <a href="src/confidentialities.html" class="font-overpass font-light">Politique de confidentialité</a>
+                    </li>
+                    <li>
+                        <a href="src/mentions.html" class="font-overpass font-light">Mentions légales</a>
+                    </li>
+                </ul>
+                <h4 class="font-fira font-black text-dark uppercase text-xl text-center mt-8 mb-2">Nous contacter</h4>
+                <ul>
+                    <li>
+                        <a href="src/contact.html" class="font-overpass font-light">Contact</a>
+                    </li>
+                    <li>
+                        <a href="mailto:contact@indiglu.com" class="font-overpass font-light">contact@indiglu.com</a>
+                    </li>
+                </ul>
+            </div>
+            <div id=follow class="my-4">
+                <h4 class="font-fira font-black text-dark uppercase text-xl text-center mb-2">Suivez-nous</h4>
+                <ul class="flex justify-evenly">
+                    <li><i class="fab fa-instagram fa-2x text-black"></i></li>
+                    <li><i class="fab fa-facebook-f fa-2x text-black"></i></li>
+                    <li><i class="fab fa-youtube fa-2x text-black"></i></li>
+                </ul>
+            </div>
+            <div id="newslette_footer" class="mt-4 mb-32 tablet:mb-44 laptop:mb-[32rem]">
+                <h4 class="font-fira font-black text-dark uppercase text-xl text-center mb-2">Rejoindre la newsletter</h4>
+                <form action="/leads-subscribing-newsletter" method="post">
+                    <div>
+                        <label for="email" class="font-overpass font-thin">Votre adresse e-mail :</label>
+                        <input id="email" name="subscriber_email" type="email" class="w-full h-10"/>
+                    </div>
+                    <div>
+                        <input type="submit" class="font-fira bg-dark text-white px-8 py-2 w-full" value="S'abonner">
+                    </div>
+                </form>    
+            </div>
+        </div>
+        <img src="src/image/fruits.png" alt="" class="absolute bottom-0 right-0 opacity-60 w-[200vw] tablet:w-full">
+    </footer>
+
+    <!--menu + dorpdown--><script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script>
+        //slider showcase
+        /*var flkty = new Flickity( '.showcase-carousel', {
+            wrapAround: true,
+            draggable: true,
+            freeScroll: false,
+            autoPlay: 2000,
+            pageDots: true,
+            prevNextButtons: false,
+            cellAlign: 'center',
+        });
+
+        //slider recettes
+        var flkty = new Flickity( '.lastrecepe-carousel', {
+            wrapAround: true,
+            draggable: true,
+            freeScroll: false,
+            autoPlay: false,
+            pageDots: false,
+            cellAlign: 'center',
+        });*/
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            centeredSlides: true,
+            spaceBetween: 30,
+        });
+        var swiper = new Swiper(".showcaseSlider", {
+            slidesPerView: "auto",
+            loop: true,
+            autoplay: {
+            delay: 2500,
+                disableOnInteraction: false,
+            },
+            scrollbar: {
+                el: ".swiper-scrollbar",
+                hide: false,
+            },
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,248 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    h1 {
+        @apply my-8 text-center font-fira text-3xl font-black text-dark;
+    }
+
+    h2 {
+        @apply my-4 font-fira text-2xl font-black text-dark;
+    }
+
+    h3 {
+        @apply my-4 font-fira text-xl font-black text-dark;
+    }
+
+    h4 {
+        @apply font-fira font-bold text-dark;
+    }
+
+    p, span, a {
+        @apply mb-4 font-overpass text-black;
+    }
+
+    input, label {
+        @apply font-overpass text-black;
+        outline: none;
+    }
+}
+
+@layer components{
+    /*------------------- GRILLE ASSYMETRIQUE --------------------*/
+
+    @media (min-width: 768px) {
+        .grid_custom {
+            @apply grid grid-cols-2 gap-8
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .grid_custom {
+            @apply grid-cols-3
+        }
+
+        .grid_custom > *:nth-child(4n + 1),
+        .grid_custom > *:nth-child(4n + 4) {
+            grid-column: auto / span 2;
+        }
+    }
+
+    /*------------------- BOUTONS --------------------*/
+
+    .btn-primary {
+        @apply rounded-full bg-secondary py-4 px-8 text-center font-fira font-black text-black;
+        box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-secondary {
+        @apply rounded-full bg-primary py-4 px-8 text-center font-fira font-black text-black;
+        box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    /*------------------- FORMULAIRE --------------------*/
+
+    input:focus{
+        outline:none;
+    }
+
+    /*checkbox*/
+
+    label div {
+        @apply mr-2 inline-block h-5 w-5 cursor-pointer rounded-sm border-2 border-primary text-center ; 
+        line-height:20px;
+    }
+
+    label i {
+        @apply opacity-0;
+    }
+
+    input:checked + label i {
+        @apply opacity-100 text-primary;
+    }
+
+    /*add image*/
+
+    .wrapper.active{
+        @apply border-none;
+    }
+
+    .wrapper.active:hover .file-name{
+        @apply block;
+    }
+
+    /*select multiple*/
+
+    .selectMultiple {
+        @apply relative mb-5 w-full;
+    }
+
+    .selectMultiple select {
+        @apply hidden;
+    }
+
+    .selectMultiple > div {
+        @apply relative z-10 rounded-lg bg-white px-4 py-2 shadow-md;
+    }
+
+    .selectMultiple > div:hover {
+        @apply shadow-lg;
+    }
+
+    .selectMultiple > div {
+        min-height: 44px;
+        transition: box-shadow 0.3s ease;
+    }
+
+    .selectMultiple > div .arrow {
+        @apply absolute bottom-0 top-0 right-1 cursor-pointer w-7;
+    }
+
+    .selectMultiple > div .arrow:before, .selectMultiple > div .arrow:after {
+        @apply absolute block border-b-8 border-dark;
+        content: '';
+        width: 2px;
+        height: 8px;
+        top: 43%;
+        transition: all .3s ease;
+    }
+
+    .selectMultiple > div .arrow:before {
+        right: 12px;
+        transform: rotate(-130deg);
+    }
+
+    .selectMultiple > div .arrow:after {
+        left: 9px;
+        transform: rotate(130deg);
+    }
+
+    .selectMultiple > div span {
+        @apply absolute left-6 top-4 block cursor-pointer text-primary;
+        line-height: 28px;
+        transition: all 0.3s ease;
+    }
+
+    .selectMultiple > div span.hide {
+        @apply visible opacity-0;
+        transform: translate(-4px, 0);
+    }
+
+    .selectMultiple > ul {
+        @apply invisible absolute left-0 right-0 z-10 m-0 list-none rounded-md p-0 opacity-0 top-full;
+        transform: translate(0, 20px) scale(0.8);
+        transform-origin: 0 0;
+        filter: drop-shadow(0 12px 20px rgba(22, 42, 90, .08));
+        transition: all 0.4s ease, transform 0.4s cubic-bezier(0.87, -0.41, 0.19, 1.44), filter 0.3s ease 0.2s;
+    }
+
+    .selectMultiple > ul li {
+        @apply relative cursor-pointer overflow-hidden bg-white p-2 text-dark hover:bg-primary hover:text-white;
+        transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease 0.3s, opacity 0.5s ease 0.3s, border-radius 0.3s ease 0.3s;
+    }
+
+    .selectMultiple > ul li:first-child, 
+    .selectMultiple > ul li:first-child:last-child, 
+    .selectMultiple > ul li:last-child, 
+    .selectMultiple > ul li:last-child:first-child,
+    .selectMultiple > ul li.beforeRemove,
+    .selectMultiple > ul li.beforeRemove:first-child,
+    .selectMultiple > ul li.afterRemove,
+    .selectMultiple > ul li.afterRemove:last-child{
+        @apply rounded-md;
+    }
+
+    .selectMultiple > ul li.remove {
+        @apply opacity-0;
+        transform: scale(0);
+    }
+
+    .selectMultiple > ul li.remove:after {
+        -webkit-animation: ripple 0.4s ease-out;
+        animation: ripple 0.4s ease-out;
+    }
+
+    .selectMultiple > ul li.notShown {
+        @apply hidden opacity-0;
+        transform: scale(0);
+        transition: transform 0.35s ease, opacity 0.4s ease;
+    }
+
+    .selectMultiple > ul li.notShown.show {
+        @apply opacity-100;
+        transform: scale(1);
+    }
+
+    .selectMultiple.open > div {
+        @apply shadow-md;
+    }
+
+    .selectMultiple.open > div .arrow:before {
+        transform: rotate(-50deg);
+    }
+
+    .selectMultiple.open > div .arrow:after {
+        transform: rotate(50deg);
+    }
+
+    .selectMultiple.open > ul {
+        @apply visible opacity-100;
+        transform: translate(0, 12px) scale(1);
+        filter: drop-shadow(0 16px 24px rgba(22, 42, 90, .16));
+    }
+}
+
+@layer utilities{
+    #menu p, #menu span, #menu a, #menu input, #menu label {
+        @apply m-0 font-fira font-bold text-dark;
+    }
+
+    /*form add step*/
+
+    #new_chq {
+        @apply text-center;
+    }
+
+    #new_chq textarea {
+        @apply my-2 w-full bg-primary py-2 px-4 font-overpass placeholder-dark laptop:w-8/12 laptop:mx-auto;
+    }
+
+    /*form add ingredient*/
+
+    #new_ing div {
+        @apply border-b-2 border-primary mt-4 tablet:flex laptop:w-8/12 laptop:mx-auto;
+    }
+
+    #new_ing input {
+        @apply w-full my-2 tablet:w-1/4 tablet:m-0;
+    }
+
+    #new_ing input:first-of-type {
+        @apply tablet:w-2/4;
+    }
+
+    .important-block{
+        display: block !important;
+    }
+}

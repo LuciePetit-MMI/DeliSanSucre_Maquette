@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/main.css">
+    <!--fontawsome-->
+    <script src="https://kit.fontawesome.com/7909d40077.js" crossorigin="anonymous"></script>
+    <!--connection google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--font overpass-->
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <!--font fira sans-->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700;900&display=swap" rel="stylesheet">
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Rejoins la team DéliSanSucre</title>
+</head>
+<body>
+    <header id="navigation" class="hidden">
+        <a href="../index.html"><img src="image/image.png" alt="logo délisansucre"></a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="recepes.html">Recettes</a>
+                    <ul>
+                        <div>
+                            <p>Des recettes adaptées pour tous les goûts</p>
+                            <a href="recepes.html">Voir toutes les recettes</a>
+                            <a href="add_recepe.html">Proposer une recette</a>
+                        </div>
+                        <div>
+                            <a href="categories.html">Catégories</a>
+                            <a href="category.html">Sans sucre</a>
+                            <a href="category.html">Sans lactose</a>
+                            <a href="category.html">Sans gluten</a>
+                            <a href="category.html">Sans sel</a>
+                            <a href="category.html">Végétarien</a>
+                            <a href="category.html">Vegan</a>
+                        </div>
+                        <div>
+                            <a href="categories.html">Repas</a>
+                            <a href="category.html">Petit-déjeuner</a>
+                            <a href="category.html">Déjeuner</a>
+                            <a href="category.html">Collation</a>
+                            <a href="category.html">Apéro</a>
+                            <a href="category.html">Diner</a>
+                        </div>
+                        <div>
+                            <a href="categories.html">Plats</a>
+                            <a href="category.html">Petit-déjeuner</a>
+                            <a href="category.html">Apéro</a>
+                            <a href="category.html">Entrée</a>
+                            <a href="category.html">Plat</a>
+                            <a href="category.html">Dessert</a>
+                        </div>
+                    </ul>
+                </li>
+                <li>
+                    <a href="menu.html">Menu de la semaine</a>
+                </li>
+                <li>
+                    <a href="articles.html">Articles</a>
+                </li>
+                <li>
+                    <a href="account.html">Profil</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="w-10/12 mx-auto">
+        <h1 class="font-fira font-black text-black mt-8 pb-6 text-3xl text-center">Rejoindre DéliSanSucre</h1>
+        <section id="login">
+            <div class="tablet:flex tablet:justify-center">
+                <div class="border-secondary border-2 p-4 flex flex-col items-center">
+                    <h2 class="font-fira font-black text-dark text-xl mb-4">Se connecter sur DéliSanSucre</h2>
+                    <div class="my-2">
+                        <p>Je n'ai pas de compte</p>
+                        <button>Je crée un compte</button>
+                    </div>
+                    <button class="bg-primary rounded-full w-full font-fira font-black p-2 text-center my-2 tablet:w-80">Continuer sur Facebook</button>
+                    <p>ou</p>
+                    <form action="" class="flex flex-col w-full">
+                        <input type="text" placeholder="Votre e-mail" class="border-secondary border-2 rounded-lg w-full font-overpass font-light p-2 text-center my-2">
+                        <input type="text" placeholder="Votre mot de passe" class="border-secondary border-2 rounded-lg w-full font-overpass font-light p-2 text-center my-2">
+                        <input type="submit" value="Se connecter" class="btn-secondary w-full laptop:w-80 laptop:self-center">
+                    </form>
+                </div>
+                <img src="image/image.png" alt="image contact" class="hidden tablet:block">    
+            </div>
+        </section>
+        <section id="singup">
+            <div class="tablet:flex tablet:justify-center">
+                <div class="border-secondary border-2 p-4 flex flex-col items-center">
+                    <h2 class="font-fira font-black text-dark text-xl mb-4">S'inscrire sur DéliSanSucre</h2>
+                    <div class="my-2">
+                        <p>J'ai déjà un compte</p>
+                        <button>Je me connecte</button>
+                    </div>
+                    <button class="bg-primary rounded-full w-full font-fira font-black p-2 text-center my-2 tablet:w-80">Continuer sur Facebook</button>
+                    <p>ou</p>
+                    <form action="" class="flex flex-col w-full">
+                        <input type="text" placeholder="Votre nom" class="border-secondary border-2 rounded-lg w-full font-overpass font-light p-2 text-center my-2">
+                        <input type="text" placeholder="Votre prénom" class="border-secondary border-2 rounded-lg w-full font-overpass font-light p-2 text-center my-2">
+                        <input type="text" placeholder="Votre e-mail" class="border-secondary border-2 rounded-lg w-full font-overpass font-light p-2 text-center my-2">
+                        <input type="text" placeholder="Votre mot de passe" class="border-secondary border-2 rounded-lg w-full font-overpass font-light p-2 text-center my-2">
+                        <label for="" class="font-fira font-bold text-black">J'ai un régime alimentaire particulier</label>
+                        <select multiple name="" id="" data-placeholder="Sélectionner un régime">
+                            <option>Sans sucre</option>
+                            <option>Sans gluten</option>
+                            <option>Sans lactose</option>
+                            <option>Sans sel</option>
+                            <option>Végétarien</option>
+                            <option>Vegan</option>
+                        </select>
+                        <div class="flex flex-row">
+                            <input type="checkbox" class="checkbox-custom hidden" id="conditions">
+                            <label for="conditions" class="checkbox-custom-label"><div><i class="fa fa-check"></i></div>J'accepte les <a href="conditions.html" class="text-secondary underline">conditions</a> et la <a href="confidentialities.html" class="text-secondary underline">charte de confidentialité</a>.*</label>    
+                        </div>
+                        <div class="flex flex-rowe">
+                            <input type="checkbox" class="checkbox-custom hidden" id="newsletter">
+                            <label for="newsletter" class="checkbox-custom-label"><div><i class="fa fa-check"></i></div>J'accepte de recevoir les newsletters DéliSanSucre</label>
+                        </div>
+                        <input type="submit" value="S'inscrire" class="btn-secondary w-full laptop:w-80 laptop:self-center">
+                    </form>
+                </div>
+                <img src="image/image.png" alt="image contact" class="hidden tablet:block">    
+            </div>
+        </section>    
+    </main>
+</body>
+</html>
+<script>
+    $(document).ready(function() {
+
+    var select = $('select[multiple]');
+    var options = select.find('option');
+
+    var div = $('<div />').addClass('selectMultiple');
+    var active = $('<div />');
+    var list = $('<ul />');
+    var placeholder = select.data('placeholder');
+
+    var span = $('<span />').text(placeholder).appendTo(active);
+
+    options.each(function() {
+        var text = $(this).text();
+        if($(this).is(':selected')) {
+            active.append($('<a />').html('<em>' + text + '</em><i></i>'));
+            span.addClass('hide');
+        } else {
+            list.append($('<li />').html(text));
+        }
+    });
+
+    active.append($('<div />').addClass('arrow'));
+    div.append(active).append(list);
+
+    select.wrap(div);
+
+    $(document).on('click', '.selectMultiple ul li', function(e) {
+        var select = $(this).parent().parent();
+        var li = $(this);
+        if(!select.hasClass('clicked')) {
+            select.addClass('clicked');
+            li.prev().addClass('beforeRemove');
+            li.next().addClass('afterRemove');
+            li.addClass('remove');
+            var a = $('<a />').addClass('notShown').html('<em>' + li.text() + '</em><i></i>').hide().appendTo(select.children('div'));
+            a.slideDown(400, function() {
+                setTimeout(function() {
+                    a.addClass('shown');
+                    select.children('div').children('span').addClass('hide');
+                    select.find('option:contains(' + li.text() + ')').prop('selected', true);
+                }, 500);
+            });
+            setTimeout(function() {
+                if(li.prev().is(':last-child')) {
+                    li.prev().removeClass('beforeRemove');
+                }
+                if(li.next().is(':first-child')) {
+                    li.next().removeClass('afterRemove');
+                }
+                setTimeout(function() {
+                    li.prev().removeClass('beforeRemove');
+                    li.next().removeClass('afterRemove');
+                }, 200);
+
+                li.slideUp(400, function() {
+                    li.remove();
+                    select.removeClass('clicked');
+                });
+            }, 600);
+        }
+    });
+
+    $(document).on('click', '.selectMultiple > div a', function(e) {
+        var select = $(this).parent().parent();
+        var self = $(this);
+        self.removeClass().addClass('remove');
+        select.addClass('open');
+        setTimeout(function() {
+            self.addClass('disappear');
+            setTimeout(function() {
+                self.animate({
+                    width: 0,
+                    height: 0,
+                    padding: 0,
+                    margin: 0
+                }, 300, function() {
+                    var li = $('<li />').text(self.children('em').text()).addClass('notShown').appendTo(select.find('ul'));
+                    li.slideDown(400, function() {
+                        li.addClass('show');
+                        setTimeout(function() {
+                            select.find('option:contains(' + self.children('em').text() + ')').prop('selected', false);
+                            if(!select.find('option:selected').length) {
+                                select.children('div').children('span').removeClass('hide');
+                            }
+                            li.removeClass();
+                        }, 400);
+                    });
+                    self.remove();
+                })
+            }, 300);
+        }, 400);
+    });
+
+    $(document).on('click', '.selectMultiple > div .arrow, .selectMultiple > div span', function(e) {
+        $(this).parent().parent().toggleClass('open');
+    });
+
+    });
+
+</script>

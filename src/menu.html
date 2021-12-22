@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/main.css">
+    <!--fontawsome-->
+    <script src="https://kit.fontawesome.com/7909d40077.js" crossorigin="anonymous"></script>
+    <!--connection google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--font overpass-->
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <!--font fira sans-->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700;900&display=swap" rel="stylesheet">
+    <title>Composer votre menu personnalisé | DéliSanSucre</title>
+</head>
+<body>
+    <header id="navigation" class="hidden">
+        <a href="../index.html"><img src="image/image.png" alt="logo délisansucre"></a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="recepes.html">Recettes</a>
+                    <ul>
+                        <div>
+                            <p>Des recettes adaptées pour tous les goûts</p>
+                            <a href="recepes.html">Voir toutes les recettes</a>
+                            <a href="add_recepe.html">Proposer une recette</a>
+                        </div>
+                        <div>
+                            <a href="categories.html">Catégories</a>
+                            <a href="category.html">Sans sucre</a>
+                            <a href="category.html">Sans lactose</a>
+                            <a href="category.html">Sans gluten</a>
+                            <a href="category.html">Sans sel</a>
+                            <a href="category.html">Végétarien</a>
+                            <a href="category.html">Vegan</a>
+                        </div>
+                        <div>
+                            <a href="categories.html">Repas</a>
+                            <a href="category.html">Petit-déjeuner</a>
+                            <a href="category.html">Déjeuner</a>
+                            <a href="category.html">Collation</a>
+                            <a href="category.html">Apéro</a>
+                            <a href="category.html">Diner</a>
+                        </div>
+                        <div>
+                            <a href="categories.html">Plats</a>
+                            <a href="category.html">Petit-déjeuner</a>
+                            <a href="category.html">Apéro</a>
+                            <a href="category.html">Entrée</a>
+                            <a href="category.html">Plat</a>
+                            <a href="category.html">Dessert</a>
+                        </div>
+                    </ul>
+                </li>
+                <li>
+                    <a href="menu.html">Menu de la semaine</a>
+                </li>
+                <li>
+                    <a href="articles.html">Articles</a>
+                </li>
+                <li>
+                    <a href="account.html">Profil</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="w-10/12 mx-auto">
+        <h1>Menu de la semaine</h1>
+        <div class="flex justify-between flex-col-reverse relative laptop:flex-row">
+            <div id="menu" class="w-full">
+                <section id="monday" class="mb-6">
+                    <div @click.away="open = false" class="relative" x-data="{ open: false }" :class="{'h-[140vh] tablet:h-[60vh] laptop:h-[65vh] desktop:h-80': open, 'h-full': !open}" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95">
+                        <button @click="open = !open" class="flex flex-row items-center border-b-2 border-dark w-40">
+                          <h2 class="my-1">Lundi</h2>
+                          <svg fill="dark" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="non" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </button>
+                            <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right">
+                                <div class="grid grid-cols-1 gap-4 tablet:grid-cols-5">
+                                    <div class="tablet:text-center font-fira font-bold">
+                                        <h3 class="mb-4">Petit-déj'</h3>
+                                        <div class="w-1/3 tablet:w-full">
+                                            <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                <img src="" alt="" class="h-full w-full object-cover">
+                                            </a>    
+                                        </div>
+                                    </div>
+                                    <div class="tablet:text-center font-fira font-bold">
+                                        <h3 class="mb-4">Collation</h3>
+                                        <div class="w-1/3 tablet:w-full">
+                                            <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                <img src="" alt="" class="h-full w-full object-cover">
+                                            </a>    
+                                        </div>
+                                    </div>
+                                    <div class="tablet:text-center font-fira font-bold">
+                                        <h3 class="mb-4">Déjeuner</h3>
+                                        <div class="flex justify-between tablet:flex-col">
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>
+                                                <p class="my-2">Entrée</p>
+                                            </div>
+                                            <div class="w-1/3 mx-2 tablet:w-full tablet:mx-0">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>
+                                                <p class="my-2">Plat</p>
+                                            </div>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>
+                                                <p class="my-2">Dessert</p>
+                                            </div>    
+                                        </div>
+                                    </div>
+                                    <div class="tablet:text-center font-fira font-bold">
+                                        <h3 class="mb-4">Goûter</h3>
+                                        <div class="w-1/3 tablet:w-full">
+                                            <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                <img src="" alt="" class="h-full w-full object-cover">
+                                            </a>    
+                                        </div>
+                                    </div>
+                                    <div class="tablet:text-center font-fira font-bold">
+                                        <h3 class="mb-4">Dîner</h3>
+                                        <div class="flex justify-between tablet:flex-col">
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>
+                                                <p class="my-2">Entrée</p>
+                                            </div>
+                                            <div class="w-1/3 mx-2 tablet:w-full tablet:mx-0">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>
+                                                <p class="my-2">Plat</p>
+                                            </div>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>
+                                                <p class="my-2">Dessert</p>
+                                            </div>    
+                                        </div>
+                                    </div>    
+                                </div>    
+                            </div>
+                          </div>    
+                    </section>
+                    <section id="tuesday" class="mb-6">
+                        <div @click.away="open = false" class="relative" x-data="{ open: false }" :class="{'h-[290vw] tablet:h-[60vw] laptop:h-[65vh] desktop:h-80': open, 'h-full': !open}" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95">
+                            <button @click="open = !open" class="flex flex-row items-center border-b-2 border-dark w-40">
+                              <h2 class="my-1">Mardi</h2>
+                              <svg fill="dark" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="non" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right">
+                                    <div class="grid grid-cols-1 gap-4 tablet:grid-cols-5">
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Petit-déjeuner</h3>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Collation</h3>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Déjeuner</h3>
+                                            <div class="flex justify-between tablet:flex-col">
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Entrée</p>
+                                                </div>
+                                                <div class="w-1/3 mx-2 tablet:w-full tablet:mx-0">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Plat</p>
+                                                </div>
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Dessert</p>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Goûter</h3>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Dîner</h3>
+                                            <div class="flex justify-between tablet:flex-col">
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Entrée</p>
+                                                </div>
+                                                <div class="w-1/3 mx-2 tablet:w-full tablet:mx-0">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Plat</p>
+                                                </div>
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Dessert</p>
+                                                </div>    
+                                            </div>
+                                        </div>    
+                                    </div>    
+                                </div>
+                              </div>    
+                    </section>
+                    <section id="wednesday" class="mb-6">
+                        <div @click.away="open = false" class="relative" x-data="{ open: false }" :class="{'h-[290vw] tablet:h-[60vw] laptop:h-[65vh] desktop:h-80': open, 'h-full': !open}" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95">
+                            <button @click="open = !open" class="flex flex-row items-center border-b-2 border-dark w-40">
+                              <h2 class="my-1">Mercredi</h2>
+                              <svg fill="dark" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="non" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right">
+                                    <div class="grid grid-cols-1 gap-4 tablet:grid-cols-5">
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Petit-déjeuner</h3>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Collation</h3>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Déjeuner</h3>
+                                            <div class="flex justify-between tablet:flex-col">
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Entrée</p>
+                                                </div>
+                                                <div class="w-1/3 mx-2 tablet:w-full tablet:mx-0">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Plat</p>
+                                                </div>
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Dessert</p>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Goûter</h3>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Dîner</h3>
+                                            <div class="flex justify-between tablet:flex-col">
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Entrée</p>
+                                                </div>
+                                                <div class="w-1/3 mx-2 tablet:w-full tablet:mx-0">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Plat</p>
+                                                </div>
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Dessert</p>
+                                                </div>    
+                                            </div>
+                                        </div>    
+                                    </div>    
+                                </div>
+                              </div>    
+                    </section>
+                    <section id="thursday" class="mb-6">
+                        <div @click.away="open = false" class="relative" x-data="{ open: false }" :class="{'h-[290vw] tablet:h-[60vw] laptop:h-[65vh] desktop:h-80': open, 'h-full': !open}" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95">
+                            <button @click="open = !open" class="flex flex-row items-center border-b-2 border-dark w-40">
+                              <h2 class="my-1">Jeudi</h2>
+                              <svg fill="dark" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="non" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right">
+                                    <div class="grid grid-cols-1 gap-4 tablet:grid-cols-5">
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Petit-déjeuner</h3>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Collation</h3>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Déjeuner</h3>
+                                            <div class="flex justify-between tablet:flex-col">
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Entrée</p>
+                                                </div>
+                                                <div class="w-1/3 mx-2 tablet:w-full tablet:mx-0">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Plat</p>
+                                                </div>
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Dessert</p>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Goûter</h3>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Dîner</h3>
+                                            <div class="flex justify-between tablet:flex-col">
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Entrée</p>
+                                                </div>
+                                                <div class="w-1/3 mx-2 tablet:w-full tablet:mx-0">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Plat</p>
+                                                </div>
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Dessert</p>
+                                                </div>    
+                                            </div>
+                                        </div>    
+                                    </div>    
+                                </div>
+                              </div>    
+                    </section>
+                    <section id="friday" class="mb-6">
+                        <div @click.away="open = false" class="relative" x-data="{ open: false }" :class="{'h-[290vw] tablet:h-[60vw] laptop:h-[65vh] desktop:h-80': open, 'h-full': !open}" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95">
+                            <button @click="open = !open" class="flex flex-row items-center border-b-2 border-dark w-40">
+                              <h2 class="my-1">Vendredi</h2>
+                              <svg fill="dark" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="non" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right">
+                                    <div class="grid grid-cols-1 gap-4 tablet:grid-cols-5">
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Petit-déjeuner</h3>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Collation</h3>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Déjeuner</h3>
+                                            <div class="flex justify-between tablet:flex-col">
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Entrée</p>
+                                                </div>
+                                                <div class="w-1/3 mx-2 tablet:w-full tablet:mx-0">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Plat</p>
+                                                </div>
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Dessert</p>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Goûter</h3>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Dîner</h3>
+                                            <div class="flex justify-between tablet:flex-col">
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Entrée</p>
+                                                </div>
+                                                <div class="w-1/3 mx-2 tablet:w-full tablet:mx-0">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Plat</p>
+                                                </div>
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Dessert</p>
+                                                </div>    
+                                            </div>
+                                        </div>    
+                                    </div>    
+                                </div>
+                              </div>    
+                    </section>
+                    <section id="sarturday" class="mb-6">
+                        <div @click.away="open = false" class="relative" x-data="{ open: false }" :class="{'h-[290vw] tablet:h-[60vw] laptop:h-[65vh] desktop:h-80': open, 'h-full': !open}" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95">
+                            <button @click="open = !open" class="flex flex-row items-center border-b-2 border-dark w-40">
+                              <h2 class="my-1">Samedi</h2>
+                              <svg fill="dark" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="non" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right">
+                                    <div class="grid grid-cols-1 gap-4 tablet:grid-cols-5">
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Petit-déjeuner</h3>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Collation</h3>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Déjeuner</h3>
+                                            <div class="flex justify-between tablet:flex-col">
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Entrée</p>
+                                                </div>
+                                                <div class="w-1/3 mx-2 tablet:w-full tablet:mx-0">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Plat</p>
+                                                </div>
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Dessert</p>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Goûter</h3>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Dîner</h3>
+                                            <div class="flex justify-between tablet:flex-col">
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Entrée</p>
+                                                </div>
+                                                <div class="w-1/3 mx-2 tablet:w-full tablet:mx-0">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Plat</p>
+                                                </div>
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Dessert</p>
+                                                </div>    
+                                            </div>
+                                        </div>    
+                                    </div>    
+                                </div>
+                              </div>    
+                    </section>
+                    <section id="sunday" class="mb-6">
+                        <div @click.away="open = false" class="relative" x-data="{ open: false }" :class="{'h-[290vw] tablet:h-[60vw] laptop:h-[65vh] desktop:h-80': open, 'h-full': !open}" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95">
+                            <button @click="open = !open" class="flex flex-row items-center border-b-2 border-dark w-40">
+                              <h2 class="my-1">Dimanche</h2>
+                              <svg fill="dark" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="non" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right">
+                                    <div class="grid grid-cols-1 gap-4 tablet:grid-cols-5">
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Petit-déjeuner</h3>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Collation</h3>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Déjeuner</h3>
+                                            <div class="flex justify-between tablet:flex-col">
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Entrée</p>
+                                                </div>
+                                                <div class="w-1/3 mx-2 tablet:w-full tablet:mx-0">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Plat</p>
+                                                </div>
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Dessert</p>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Goûter</h3>
+                                            <div class="w-1/3 tablet:w-full">
+                                                <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden">
+                                                    <img src="" alt="" class="h-full w-full object-cover">
+                                                </a>    
+                                            </div>
+                                        </div>
+                                        <div class="tablet:text-center font-fira font-bold">
+                                            <h3 class="mb-4">Dîner</h3>
+                                            <div class="flex justify-between tablet:flex-col">
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Entrée</p>
+                                                </div>
+                                                <div class="w-1/3 mx-2 tablet:w-full tablet:mx-0">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Plat</p>
+                                                </div>
+                                                <div class="w-1/3 tablet:w-full">
+                                                    <a href="recepe.html" class="wrapper relative h-32 w-full border-2 border-primary flex items-center justify-center overflow-hidden mb-0">
+                                                        <img src="" alt="" class="h-full w-full object-cover">
+                                                    </a>
+                                                    <p class="my-2">Dessert</p>
+                                                </div>    
+                                            </div>
+                                        </div>    
+                                    </div>    
+                                </div>
+                              </div>    
+                    </section>
+            
+            </div>
+            <div id="sidebar" class="w-full mb-4 laptop:ml-4 laptop:w-40">
+                <h3>Suggestions de recettes</h3>
+                <div class="border-2 border-black p-4 grid grid-cols-3 gap-4 tablet:grid-cols-4 laptop:grid-cols-1">
+                    <div>
+                        <img src="image/image.png" alt="" class="">
+                        <p class="mb-0">Titre recette</p>
+                    </div>
+                    <div>
+                        <img src="image/image.png" alt="" class="">
+                        <p class="mb-0">Titre recette</p>
+                    </div>
+                    <div>
+                        <img src="image/image.png" alt="" class="">
+                        <p class="mb-0">Titre recette</p>
+                    </div>
+                    <div>
+                        <img src="image/image.png" alt="" class="">
+                        <p class="mb-0">Titre recette</p>
+                    </div>
+                    <div>
+                        <img src="image/image.png" alt="" class="">
+                        <p class="mb-0">Titre recette</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</body>
+</html>
